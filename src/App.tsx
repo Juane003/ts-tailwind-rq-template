@@ -1,13 +1,19 @@
-import { QueryClient, QueryClientProvider } from "react-query";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import { Home } from "./pages";
 
-const queryClient = new QueryClient();
-
+const routes = createBrowserRouter(
+  createRoutesFromElements(
+    <Route>
+      <Route path="/" element={<Home />} />
+    </Route>
+  )
+);
 const App = () => {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <h1>Hello World!</h1>
-    </QueryClientProvider>
-  );
+  return <h1>Hello World!</h1>;
 };
 
 export default App;
